@@ -7,11 +7,11 @@
 
 		<server>
 			<id>packagecloud.releases</id>
-			<password>{2K+0Fk2ChLgHsxKEAaejHuzE+HhjX9EYshZHXrU6/CBEiZs3Ci/7RE2rM3DnsWUgAfqNyoX+d4t+4SG7dpr6xZm8boHilIMdDtKwMpK3POA=}</password>
+			<password>*******************</password>
 		</server>
 		<server>
 			<id>packagecloud.snapshots</id>
-			<password>{2K+0Fk2ChLgHsxKEAaejHuzE+HhjX9EYshZHXrU6/CBEiZs3Ci/7RE2rM3DnsWUgAfqNyoX+d4t+4SG7dpr6xZm8boHilIMdDtKwMpK3POA=}</password>
+			<password>******************</password>
 		</server>
 
 	</servers>
