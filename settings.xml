@@ -18,4 +18,12 @@
 
 	</servers>
 
+	<mirrors>
+		<mirror>
+			<id>central</id>
+			<url>http://localhost:8081/repository/nexus-group/</url>
+			<mirrorOf>*</mirrorOf>
+		</mirror>
+	</mirrors>
+
 </settings>
