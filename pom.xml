@@ -6,12 +6,12 @@
 
 	<groupId>de.heyden.simon</groupId>
 	<artifactId>maven-settings</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>${revision}</version>
 
 	<packaging>jar</packaging>
 
 	<properties>
-		<revision>1.0-SNAPSHOT</revision>
+		<revision>1.1</revision>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
@@ -19,11 +19,34 @@
 		<java.version>11</java.version>
 	</properties>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.jboss.ejb3</groupId>
-			<artifactId>jboss-ejb3-api</artifactId>
-			<version>3.1.0</version>
-		</dependency>
-	</dependencies>
+	<repositories>
+		<repository>
+			<id>nexus-snapshots</id>
+			<name>hosted snapshots</name>
+			<url>http://localhost:8081/repository/nexus-snapshots/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>nexus-releases</id>
+			<name>hosted snapshots</name>
+			<url>http://localhost:8081/repository/nexus-releases/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<url>http://localhost:8081/repository/nexus-snapshots/</url>
+		</snapshotRepository>
+		<repository>
+			<id>nexus-releases</id>
+			<url>http://localhost:8081/repository/nexus-releases/</url>
+		</repository>
+	</distributionManagement>
+
 </project>
