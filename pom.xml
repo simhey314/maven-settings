@@ -6,7 +6,7 @@
 
 	<groupId>de.heyden.simon</groupId>
 	<artifactId>maven-settings</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.3-SNAPSHOT</version>
 
 	<packaging>jar</packaging>
 
@@ -63,9 +63,19 @@
 					<url>packagecloud+https://packagecloud.io/simhey/snapshots</url>
 				</snapshotRepository>
 			</distributionManagement>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
+		</profile>
+		<profile>
+			<id>nexus-local</id>
+			<distributionManagement>
+				<snapshotRepository>
+					<id>nexus-snapshots</id>
+					<url>http://localhost:8081/repository/nexus-snapshots/</url>
+				</snapshotRepository>
+				<repository>
+					<id>nexus-releases</id>
+					<url>http://localhost:8081/repository/nexus-releases/</url>
+				</repository>
+			</distributionManagement>
 		</profile>
 	</profiles>
 </project>
