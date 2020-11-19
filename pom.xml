@@ -20,4 +20,55 @@
 	</properties>
 
 
+	<build>
+		<extensions>
+			<extension>
+				<groupId>io.packagecloud.maven.wagon</groupId>
+				<artifactId>maven-packagecloud-wagon</artifactId>
+				<version>0.0.6</version>
+			</extension>
+		</extensions>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>simhey-snapshots</id>
+			<url>https://packagecloud.io/simhey/snapshots/maven2</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>simhey-releases</id>
+			<url>https://packagecloud.io/simhey/releases/maven2</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<profiles>
+		<profile>
+			<id>package-cloud</id>
+			<distributionManagement>
+				<repository>
+					<id>packagecloud.releases</id>
+					<url>packagecloud+https://packagecloud.io/simhey/releases</url>
+				</repository>
+				<snapshotRepository>
+					<id>packagecloud.snapshots</id>
+					<url>packagecloud+https://packagecloud.io/simhey/snapshots</url>
+				</snapshotRepository>
+			</distributionManagement>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+	</profiles>
 </project>
